@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="data.css">
+    <title>I Will Do It</title>
+</head>
+<body >
+    <div class="container">
+        <h4>Write the names of the youcoders here</h4>
+        <div class="names" id="names">
+            <ul class="dataList" id="dataList">
+                <li class="name" placeholder="Enter name 1..." contenteditable="true"></li>
+                <li class="name" placeholder="Enter name 2..." contenteditable="true"></li>
+                <li class="name" placeholder="Enter name 3..." contenteditable="true"></li>
+                <li class="name" placeholder="Enter name 4..." contenteditable="true"></li>
+                <li class="name" placeholder="Enter name 5..." contenteditable="true"></li>
+            </ul>
+            <div class="btns">
+                <button onclick="newPerson()">New Person</button>
+                <button onclick="deletePerson()">Delete last person</button>
+                <button onclick="next()">Next</button>
+            </div>
+            
+        </div>
+        <div class="subjects" id="subjects">
+            <ul class="dataList" id="subjectList">
+                <li class="subject" placeholder="Enter subject 1..." contenteditable="true"></li>
+                <li class="subject" placeholder="Enter subject 2..." contenteditable="true"></li>
+                <li class="subject" placeholder="Enter subject 3..." contenteditable="true"></li>
+                <li class="subject" placeholder="Enter subject 4..." contenteditable="true"></li>
+                <li class="subject" placeholder="Enter subject 5..." contenteditable="true"></li>
+            </ul>
+            <div class="btns">
+                <button onclick="newSubject()">New Subject</button>
+                <button onclick="deleteSubject()">Delete last Subject</button>
+                <button onclick="save()">Next</button>
+            </div>
+            
+        </div>
+    </div>
+</body>
+<script src="app.js">
+</script>
+</html>

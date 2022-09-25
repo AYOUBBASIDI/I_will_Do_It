@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="data.css">
+    <title>I Will Do It</title>
+</head>
+<body >
+    <div class="container">
+        <div class="check">
+            <h4>Last step</h4>
+            <p class="subtitle">We need more configuration</p>
+            <ul class="configList">
+                <li>Name of your class is :</li>
+                <div class="input"><input class="nameClass" type="text" name="className" placeholder="Enter name here"></div>
+
+                <li>First show day :</li>
+                <div class="input"><input class="nameClass" id="datefield"  name="firstDay" type="date" min='1899-01-01'></div>
+
+                <li>Order of subjects :</li>
+                <div class="custom-radios">
+                    <div>
+                    <input type="radio" id="color-1" name="subject" value="1" checked>
+                    <label for="color-1">
+                        <p>Choose randomly</p>
+                        <span>
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+                        </span>
+                    </label>
+                    </div>
+                    
+                    <div>
+                    <input type="radio" id="color-2" name="subject" value="0">
+                    <label for="color-2">
+                        <p>Keep order</p>
+                        <span>
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
+                        </span>
+                    </label>
+                    </div>
+                </div>
+
+                <div class="btn">
+                    <button onclick="getData()">Finish</button>
+                </div>
+            </ul>
+            
+
+
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+</script>
+
+<script src="data.js"></script>
