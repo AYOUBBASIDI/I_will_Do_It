@@ -7,6 +7,7 @@ html {
     background-image: radial-gradient(circle farthest-corner at center, #3C4B57 0%, #1C262B 100%);
     font-family: "Walter Turncoat", cursive;
     color:white;
+    padding-bottom: 4%;
   }
   
   .loader {

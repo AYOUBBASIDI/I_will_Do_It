@@ -14,7 +14,7 @@ var randomlySub = config.randomSubject;
 var number = 0;
 var toComplet = 0;
 var diff = subjects.length - names.length;
-
+console.log(randomlySub)
 
 if(names.length < subjects.length){
     toComplet = 1
@@ -30,7 +30,7 @@ function spinn(){
     }else{
         spinnName()
         setTimeout(function(){
-        if(randomlySub){
+        if(randomlySub == 1){
             spinnSubject();
         }else{
             refreshSub();
@@ -84,7 +84,7 @@ function finish(){
     if(toComplet){
         complete();
     }
-    if(randomlySub){
+    if(randomlySub == 1){
         console.log(namesArr);
         console.log(subjectsArr);
     }else{
@@ -117,7 +117,7 @@ function complete(){
         console.log(sub);
         var name = namesArr[i];
         console.log(name)
-        if(randomlySub){
+        if(randomlySub == 1){
             subjectsArr.push(sub);
         }
         namesArr.push(name);
@@ -136,7 +136,7 @@ function completPut(sub,name){
 
 
 function download(){
-    if(randomlySub){   
+    if(randomlySub == 1){   
         localStorage.setItem("DataSubjects", JSON.stringify(subjectsArr));
     }else{
         localStorage.setItem("DataSubjects", JSON.stringify(subjects));

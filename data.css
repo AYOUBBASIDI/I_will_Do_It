@@ -9,6 +9,7 @@ body {
     font-family: "Walter Turncoat", cursive;
     color:white; 
     margin: 0;
+    padding-bottom: 4%;
 }
 
 .container {
@@ -301,4 +302,19 @@ input::-webkit-input-placeholder{
     background: white;
     color: #3a4854;
     border-color: white;
+}
+
+.header{
+    display: flex;
+    width: 94%;
+    padding: 2% 3%;
+}
+
+.logo{
+    display: flex;
+    width: 10%;
+}
+
+.logo img{
+    width: 100%;
 }

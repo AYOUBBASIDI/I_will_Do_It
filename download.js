@@ -27,13 +27,12 @@ fetch('https://date.nager.at/api/v3/publicholidays/'+ currentYear +'/MA')
   })
 
 function getData(){
-
     for(var i= 0 ; i < loop ; i++){
         const tomorrow = new Date(firstDay);
         tomorrow.setDate(tomorrow.getDate() + i)
         var date = new Date(tomorrow);
         var dayName = date.getDay();
-        var day = date.getDate();
+        var day = date.getDate(); 
         if(day.toString().length == 1){
             day = "0" + day;
         }
@@ -43,26 +42,25 @@ function getData(){
         }
         const year = date.getFullYear();
         var dataDate = year + "-" + month + "-" + day ;
-        if(dayName != 0 && dayName != 6){
+        let result = sliceHolidays(dataDate);
+        if(dayName != 0 && dayName != 6 || result == 0){
             datesArr.push(dataDate);
         }else{
             loop ++
         }
         
     }
-    sliceHolidays();
+    getAllData();
 }
 
-function sliceHolidays(){
+function sliceHolidays(date){
     for(var i=0 ; i < holidays.length ; i++){
-        for(var j = 0 ; j < datesArr.length ; j++){
-            if(holidays[i] === datesArr[j]){
-                var index = datesArr.indexOf(datesArr[j]);
-                datesArr.splice(index, 1);
-            }
+            if(holidays[i] === date){
+                return 1;
+            }else{
+                return 0;
         }
     }
-    getAllData();
 }
 
 
@@ -78,7 +76,6 @@ function sliceHolidays(){
         }
         stockData.push(obj);
     }
-    console.log(stockData);
  }
 
 
@@ -113,6 +110,10 @@ function sliceHolidays(){
     return result;
 }
 function downloadCSV(args) {  
+    
+
+    var success = document.getElementById("success");
+    success.innerHTML = "The file is ready now"
     var data, filename, link;
     var csv = convertArrayOfObjectsToCSV({
         data: stockData

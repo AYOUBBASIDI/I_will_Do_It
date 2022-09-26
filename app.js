@@ -54,15 +54,30 @@ function next(){
           addSubject(i+6);
         }
       }
-      changeTable();
+      var result = checkData("name");
+      if(result){
+        alert("Some data is empty! Check the list .");
+      }else{
+        changeTable();
+      }
+      
 }
 
-
+function checkData(type){
+    var lists = document.getElementsByClassName(type);
+    number = lists.length;
+    for(var i= 0 ; i < number; i++){
+      if(lists[i].innerHTML == ""){
+        var result = 1
+      }  
+    }
+    return result;
+}
 
 function deletePerson(){
   var lists = document.getElementsByClassName('name');
   if(lists.length > 5){
-    var select = document.getElementById('subjectList');
+    var select = document.getElementById('dataList');
     select.removeChild(select.lastChild);
   }else{
     alert("Minimum person is 5");
@@ -110,7 +125,13 @@ function save(){
   }
   localStorage.setItem("names", JSON.stringify(names));
   localStorage.setItem("subjects", JSON.stringify(subjects));
-  window.location = "/check.html"
+  var result = checkData("subject");
+  if(result){
+    alert("Some data is empty! Check the list .");
+  }else{
+    window.location = "/check.html"
+  }
+  
 }
 
 

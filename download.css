@@ -86,3 +86,8 @@ html{
     color: #3a4854;
     border-color: white;
 }
+
+#success{
+  font-size: 15px;
+  color: sandybrown;
+}
