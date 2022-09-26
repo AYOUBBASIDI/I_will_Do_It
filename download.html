@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="data.css">
     <link rel="stylesheet" href="download.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <title>I Will Do It</title>
 </head>
 <body >
@@ -14,7 +15,7 @@
         <div class="download">
             <h4>Generate the data</h4>
             <div id="load" class="b"><div></div><div></div><div></div><div></div></div>
-            <button id="downloadbtn" class="downloadbtn">Download</button>
+            <button id="downloadbtn" class="downloadbtn" onclick='downloadCSV({ filename: "ada-data.csv" });'>Download</button>
         </div>
         
     </div>

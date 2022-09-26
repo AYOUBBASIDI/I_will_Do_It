@@ -9,7 +9,8 @@ var nameCount= names.length;
 var subjectCount= subjects.length;
 var namesArr = [];
 var subjectsArr = [];
-var randomlySub = 1;
+var config = JSON.parse(localStorage.getItem("config"));
+var randomlySub = config.randomSubject;
 var number = 0;
 var toComplet = 0;
 var diff = subjects.length - names.length;
@@ -135,6 +136,12 @@ function completPut(sub,name){
 
 
 function download(){
+    if(randomlySub){   
+        localStorage.setItem("DataSubjects", JSON.stringify(subjectsArr));
+    }else{
+        localStorage.setItem("DataSubjects", JSON.stringify(subjects));
+    }
+    localStorage.setItem("dataNames", JSON.stringify(namesArr));
     window.location = "./download.html"
 }
 

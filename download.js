@@ -1,7 +1,9 @@
+var stockData = [];
 var loading = document.getElementById("load");
 var downloadbtn = document.getElementById("downloadbtn");
 var config = JSON.parse(localStorage.getItem("config"));
-// var firstDay = config[0].firstDay;
+var loop =JSON.parse(localStorage.getItem("subjects")).length;
+var firstDay = config.firstDay;
 console.log(config);
 var dataLength = JSON.parse(localStorage.getItem("subjects")).length;
 var datesArr = [];
@@ -26,9 +28,8 @@ fetch('https://date.nager.at/api/v3/publicholidays/'+ currentYear +'/MA')
 
 function getData(){
 
-    for(var i= 0 ; i < 10 ; i++){
-        const today = new Date()
-        const tomorrow = new Date(today)
+    for(var i= 0 ; i < loop ; i++){
+        const tomorrow = new Date(firstDay);
         tomorrow.setDate(tomorrow.getDate() + i)
         var date = new Date(tomorrow);
         var dayName = date.getDay();
@@ -42,9 +43,10 @@ function getData(){
         }
         const year = date.getFullYear();
         var dataDate = year + "-" + month + "-" + day ;
-        console.log(dayName)
         if(dayName != 0 && dayName != 6){
             datesArr.push(dataDate);
+        }else{
+            loop ++
         }
         
     }
@@ -60,11 +62,72 @@ function sliceHolidays(){
             }
         }
     }
-    console.log(datesArr);
+    getAllData();
 }
 
 
-var exemple = new Date(firstDay);
-console.log(exemple)
+ function  getAllData(){
+    var dataNames = JSON.parse(localStorage.getItem("dataNames"));
+    var dataSubjects = JSON.parse(localStorage.getItem("DataSubjects"));
+    for(var i = 0 ; i < dataSubjects.length ; i++){
+        var obj = {
+            "number" : i+1,
+            "name" : dataNames[i],
+            "subject" : dataSubjects[i],
+            "date" : datesArr[i],
+        }
+        stockData.push(obj);
+    }
+    console.log(stockData);
+ }
 
- 
+
+ function convertArrayOfObjectsToCSV(args) {  
+    var result, ctr, keys, columnDelimiter, lineDelimiter, data;
+
+    data = args.data || null;
+    if (data == null || !data.length) {
+        return null;
+    }
+
+    columnDelimiter = args.columnDelimiter || ',';
+    lineDelimiter = args.lineDelimiter || '\n';
+
+    keys = Object.keys(data[0]);
+
+    result = '';
+    result += keys.join(columnDelimiter);
+    result += lineDelimiter;
+
+    data.forEach(function(item) {
+        ctr = 0;
+        keys.forEach(function(key) {
+            if (ctr > 0) result += columnDelimiter;
+
+            result += item[key];
+            ctr++;
+        });
+        result += lineDelimiter;
+    });
+
+    return result;
+}
+function downloadCSV(args) {  
+    var data, filename, link;
+    var csv = convertArrayOfObjectsToCSV({
+        data: stockData
+    });
+    if (csv == null) return;
+
+    filename = args.filename || 'export.csv';
+
+    if (!csv.match(/^data:text\/csv/i)) {
+        csv = 'data:text/csv;charset=utf-8,' + csv;
+    }
+    data = encodeURI(csv);
+
+    link = document.createElement('a');
+    link.setAttribute('href', data);
+    link.setAttribute('download', filename);
+    link.click();
+}
