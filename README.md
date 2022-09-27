@@ -53,7 +53,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![alt text]([http://url/to/img.png](https://i.ibb.co/9hDHCWc/Screenshot-2022-09-27-093600.png))
+![Product](https://i.ibb.co/9hDHCWc/Screenshot-2022-09-27-093600.png)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
