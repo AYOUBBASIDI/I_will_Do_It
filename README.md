@@ -11,7 +11,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/AYOUBBASIDI/I_will_Do_It">
-    <img src="assets/loogo.png" alt="Logo" width="100" height="70">
+    <img src="assets/loogo.png" alt="Logo" width="100" height="65">
   </a>
 
 <h3 align="center">I Will Do It</h3>
