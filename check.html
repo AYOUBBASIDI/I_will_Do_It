@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="data.css">
-    <title>I Will Do It</title>
+    <link rel = "icon" type = "image/png" href = "assets/mini.png">
+    <title>Randomly - Checking</title>
 </head>
 <body >
     <div class="header">
@@ -31,22 +32,26 @@
 </html>
 
 <script>
-            var names = JSON.parse(localStorage.getItem("names"));
-            var subjects = JSON.parse(localStorage.getItem("subjects"));
-            var length = subjects.length;
-            var table = document.getElementById("table");
-            for(var i=0 ; i < length ; i++){
-                var row = table.insertRow();
-                var cell = row.insertCell();
-                if(typeof names[i] === 'undefined'){
-                    cell.innerHTML = "------";
-                }else{
-                    cell.innerHTML = names[i];
-                }
-                
-                cell = row.insertCell();
-                cell.innerHTML = subjects[i];
-            }
+    //get the data from local storage
+    var names = JSON.parse(localStorage.getItem("names"));
+    var subjects = JSON.parse(localStorage.getItem("subjects"));
+    var length = subjects.length;
+    //table to display data on it
+    var table = document.getElementById("table");
+    for(var i=0 ; i < length ; i++){
+        var row = table.insertRow();
+        var cell = row.insertCell();
+        //lenght == subjects.length 
+        // case :( subjects.length > name.length)
+        if(typeof names[i] === 'undefined'){
+            // name[i] == undefined => return '-----' in table
+            cell.innerHTML = "------";
+        }else{
+            cell.innerHTML = names[i];
+        }
+        cell = row.insertCell();
+        cell.innerHTML = subjects[i];
+    }
 
 </script>
 

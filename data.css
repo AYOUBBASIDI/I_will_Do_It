@@ -244,7 +244,7 @@ input::-webkit-input-placeholder{
     display: flex;
     align-items: center;
     gap: 60px;
-    padding: 8% 10% 3%;
+    padding: 3% 10% 3%;
     height: 10vh;
 }
 .random p{

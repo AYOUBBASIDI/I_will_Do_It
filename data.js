@@ -1,5 +1,6 @@
 
 function Cancel(){
+    //cancel from checking page (if there is some error in data) 
     var content = confirm("Are you sure , You will lose everything");
     if (content === true) {
         window.location = "./data.html"
@@ -13,25 +14,27 @@ function next(){
     window.location = "./config.html"
 }
 
+// function to set min in input date
 function today(){
     var today = new Date();
     var dd = today.getDate();
     var mm = today.getMonth() + 1;
     var yyyy = today.getFullYear();
-
     if (dd < 10) {
     dd = '0' + dd;
     }
-
     if (mm < 10) {
     mm = '0' + mm;
     } 
-        
     today = yyyy + '-' + mm + '-' + dd;
     document.getElementById("datefield").setAttribute("min", today);
 }
 today();
 
+// data of configuration 
+// name of class
+// first day for first presentation
+// random subject (0: keep the order ; 1: set a random order)
 function getData(){
     var className = document.querySelector('input[name="className"]').value;
     var firstDay = document.querySelector('input[name="firstDay"]').value;
@@ -41,11 +44,6 @@ function getData(){
         "firstDay" : firstDay ,
         "randomSubject" : subjectConfig ,
     }
-    console.log(config);
     localStorage.setItem("config" , JSON.stringify(config));
-    toSpinn();
-}
-
-function toSpinn(){
     window.location = "./random.html"
 }
