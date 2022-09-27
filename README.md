@@ -14,7 +14,7 @@
     <img src="assets/loogo.png" alt="Logo" width="100" height="50">
   </a>
 
-<h3 align="center">I Will Do It</h3>
+<h3 align="center">Randomly</h3>
 
   <p align="center">
     Projet de Tirage Sujet de Veille pour passer le tirage de tous les apprenants et l’enregistrer dans un fichier local .
