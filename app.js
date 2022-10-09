@@ -145,7 +145,7 @@ function save(){
     alert("Some data is empty! Check the list .");
   }else{
     //everyting ok 
-    window.location = "/check.html"
+      window.location.replace("./check.html");
   }
   
 }
