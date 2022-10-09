@@ -11,7 +11,7 @@ function Cancel(){
 }
 
 function next(){
-    window.location = "./config.html"
+    window.location.replace("./config.html");
 }
 
 // function to set min in input date
