@@ -111,7 +111,7 @@ Don't forget to give the project a star! Thanks again!
 
 Ayoub Basidi - [@twitter_handle](https://twitter.com/Ayoub_Basidi) - ayoubbasidi1@gmail.com
 
-Project Link: [https://github.com/AYOUBBASIDI/I_will_Do_It](https://github.com/AYOUBBASIDI/I_will_Do_It)
+Project Link: [https://github.com/AYOUBBASIDI/I_will_Do_It](https://ayoubbasidi.github.io/randomly/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
