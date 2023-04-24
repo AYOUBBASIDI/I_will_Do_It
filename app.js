@@ -144,8 +144,7 @@ function save(){
   if(result){
     alert("Some data is empty! Check the list .");
   }else{
-    //everyting ok 
-    window.location = "/check.html"
+    window.location = "./check.html"
   }
   
 }
