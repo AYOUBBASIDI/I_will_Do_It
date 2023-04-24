@@ -1,38 +1,39 @@
 li {
-    list-style: none;
-    padding: 15px;
-    border-bottom: solid 1px;
-    width: 100%;
-    text-align: center;
+     list-style: none;
+     padding: 15px;
+     border-bottom: solid 1px;
+     width: 100%;
+     text-align: center;
 }
-.randomList{
-    display: flex;
-    width: 52%;
-    justify-content: space-between;
-    padding: 0px 22%;
-    align-items: flex-start;
+ .randomList{
+     display: flex;
+     width: 52%;
+     justify-content: space-between;
+     padding: 0px 22%;
+     align-items: flex-start;
 }
-.generate{
-    display: none;
-    font-family: "Walter Turncoat", cursive;
-    background: none;
-    color: white;
-    border-color: white;
-    border: solid;
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 0;
-    width: 10%;
-    height: 45px;    
+ .generate{
+     display: none;
+     font-family: "Walter Turncoat", cursive;
+     background: none;
+     color: white;
+     border-color: white;
+     border: solid;
+     cursor: pointer;
+     font-weight: 600;
+     border-radius: 0;
+     width: 10%;
+     height: 45px;
 }
-.generate:hover{
-    background-color: white;
-    color: #3a4854;
-    border-color: white;
+ .generate:hover{
+     background-color: white;
+     color: #3a4854;
+     border-color: white;
 }
-.generateDiv{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 3%;
+ .generateDiv{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     padding-bottom: 3%;
 }
+ 
